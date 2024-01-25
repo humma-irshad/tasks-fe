@@ -1,0 +1,44 @@
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #f6b17a;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  color: #dc143c;
+}
+
+.container {
+  background-color: #f6b17a;
+  color: #000;
+  padding: 20px;
+  width: 100vh;
+  max-width: 860px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.add-task {
+  width: 6rem;
+  height: 2.5rem;
+  background-color: #2d3250;
+  border: none;
+  border-radius: 6px;
+}
+
+.add-task:hover {
+  background-color: #383f75;
+}

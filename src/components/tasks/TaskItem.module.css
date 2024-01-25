@@ -1,0 +1,44 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  justify-self: flex-start;
+}
+
+hr {
+  border-top: 3px solid #383f75;
+  border-radius: 5px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status {
+  background-color: #2d3250;
+  height: 6vh;
+  width: 25vh;
+  border: none;
+  border-radius: 5px;
+}
+.status:hover {
+  cursor: pointer;
+  background-color: #383f75;
+}
+
+.status:focus-within {
+  border: none;
+}
+
+.delete {
+  color: #dc143c;
+}
+.delete:hover {
+  cursor: pointer;
+}

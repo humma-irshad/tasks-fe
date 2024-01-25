@@ -1,0 +1,25 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination ul {
+  list-style: none;
+}
+
+.pagination button {
+  background-color: transparent;
+  color: #2d3250;
+  border: 1px ridge #2d3250;
+  border-radius: 50%;
+  font-size: large;
+  width: 27px;
+  height: 27px;
+}
+
+.pagination button:hover {
+  background-color: transparent;
+  color: #383f75;
+  box-shadow: 3px 3px #383f75;
+}
