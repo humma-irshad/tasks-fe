@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
-import authContext from "../../context/authContext.ts";
-import { useApi } from "../../hooks/use-api.ts";
-import styles from "./Tasks.module.css";
-import TaskItem from "./TaskItem.tsx";
 import { Pagination } from "../UI/Pagination.tsx";
+import { useApi } from "../../hooks/use-api.ts";
+import TaskItem from "./TaskItem.tsx";
+import authContext from "../../context/authContext.ts";
+import styles from "./Tasks.module.css";
 
 export function Tasks() {
   const [currentPage, setCurrentPage] = useState(1);

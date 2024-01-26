@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import styles from "./Auth.module.css";
 import useApi from "../../hooks";
@@ -10,15 +11,18 @@ interface IProps {
 export function Signup({ onHasAccount }: IProps) {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const navigate = useNavigate();
 
   const { api } = useApi();
   const { error, mutateAsync, isLoading } = api.useSignupUser();
 
-  async function handleSubmit(event: FormEvent) {
+  function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
-    const token = await mutateAsync({ username, password });
-    localStorage.setItem("accessToken", token.accessToken);
+    mutateAsync({ username, password }).then((token) => {
+      sessionStorage.setItem("accessToken", token.accessToken);
+      navigate("/");
+    });
 
     setUsername("");
     setPassword("");

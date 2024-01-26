@@ -14,15 +14,15 @@ export function Login({ onHasAccount }: IProps) {
   const navigate = useNavigate();
 
   const { api } = useApi();
-  const { error, mutateAsync, isLoading, isSuccess } = api.useSigninUser();
+  const { error, mutateAsync, isLoading } = api.useSigninUser();
 
-  async function handleSubmit(event: FormEvent) {
+  function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
-    const token = await mutateAsync({ username, password });
-    sessionStorage.setItem("accessToken", token.accessToken);
-
-    if (isSuccess && !isLoading) navigate("/");
+    mutateAsync({ username, password }).then((token) => {
+      sessionStorage.setItem("accessToken", token.accessToken);
+      navigate("/");
+    });
 
     setUsername("");
     setPassword("");
